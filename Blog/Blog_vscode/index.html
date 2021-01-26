@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assets/blog.png" alt="Blog image">
+                </a>
+            </div>
+            <nav class="menu-bar-container">
+                <ul class="menu-bar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">게시판</a>
+                        <ul class="drop-board">
+                            <!-- jsp에서 forEach 쓸 부분 -->
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판11</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li id="last-drop-menu">
+                                <a href="#">게시판 추가 +</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="main-container">
+                <h1>RECENT POST</h1>
+                <div class="post-article-container">
+                    <!-- jsp에서 forEach 쓸 부분 -->
+                    <article class="post-article">
+                        <h2 class="title">Title</h2>
+                        <div class="about_post">
+                            <div class="post_dt">
+                                <span>2021-01-01 12:12:12</span>
+                            </div>
+                            <div class="post_title_container">
+                                <div class="circle"></div>
+                                <span class="post_title">게시판 이름</span>
+                            </div>
+                        </div>
+                        <p class="post_ctnt">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi sunt dignissimos doloribus atque iusto qui et asperiores dolore commodi corporis! Maxime inventore veniam, itaque qui ipsam placeat et soluta omnis?
+                            Alias itaque ad minus aperiam minima suscipit dignissimos saepe doloribus, veritatis qui cupiditate incidunt quod aliquam fugiat laborum magni quisquam voluptates aut! Dicta maxime quidem rem quod laboriosam fuga magnam!
+                            Tempora minima aliquam officiis, tenetur iusto fuga, perspiciatis vitae distinctio necessitatibus commodi quia nobis molestiae, repudiandae iste ex earum et officia repellat sapiente. Obcaecati nobis cumque vel ad molestias sit.
+                            Rem at blanditiis dolores velit fugiat nesciunt, placeat molestias natus. Temporibus, maiores fuga aperiam fugit cupiditate, ipsum veniam ea labore libero obcaecati maxime reprehenderit, architecto harum molestias illo exercitationem voluptatum.
+                            Accusantium eaque libero officia, quibusdam sequi quisquam exercitationem. Ab quae itaque, modi voluptatibus eum consequatur tempora facere praesentium autem totam? Provident, saepe. Architecto saepe rem rerum accusantium ullam facere eveniet.
+                            Dicta sint eligendi, consequatur iure odit vero est animi ipsum perferendis similique corrupti magnam, quia quaerat. Eos architecto obcaecati ducimus, expedita nihil ea corrupti quaerat nobis tenetur quia labore sapiente.
+                            Saepe totam, culpa ducimus eos unde doloremque ipsa quae! Inventore repudiandae sit natus ea possimus optio quam maxime libero dicta iste ut assumenda, similique beatae unde amet vero consequuntur laboriosam.
+                            Distinctio corrupti eaque sequi vel voluptatum necessitatibus corporis! Repudiandae sunt voluptas cupiditate, quisquam asperiores iusto reiciendis distinctio corrupti harum nobis, iste ad accusamus doloremque, nisi aliquid rem tempora quia praesentium?
+                            Maiores illum deserunt corporis nisi totam perspiciatis vel fugiat nihil. Voluptates aspernatur nobis dolore dolorem. Sint inventore doloribus harum ullam non, nisi minus a amet quam voluptates laboriosam velit reiciendis.
+                            Pariatur nostrum sint, quasi libero voluptatibus cupiditate! Aut consequatur, impedit, quia laborum hic doloremque eos voluptatem ipsa exercitationem suscipit maiores voluptatum maxime accusantium, earum ab ex. Blanditiis laudantium non ab?
+                        </p>
+                        <a href="#"><button class="read_more_btn">Read More +</button></a>
+                    </article>
+    
+                    <article class="post-article">
+                        <h2 class="title">Title</h2>
+                        <div class="about_post">
+                            <div class="post_dt">
+                                <span>2021-01-01 12:12:12</span>
+                            </div>
+                            <div class="post_title_container">
+                                <div class="circle"></div>
+                                <span class="post_title">게시판 이름</span>
+                            </div>
+                        </div>
+                        <p class="post_ctnt">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi sunt dignissimos doloribus atque iusto qui et asperiores dolore commodi corporis! Maxime inventore veniam, itaque qui ipsam placeat et soluta omnis?
+                            Alias itaque ad minus aperiam minima suscipit dignissimos saepe doloribus, veritatis qui cupiditate incidunt quod aliquam fugiat laborum magni quisquam voluptates aut! Dicta maxime quidem rem quod laboriosam fuga magnam!
+                            Tempora minima aliquam officiis, tenetur iusto fuga, perspiciatis vitae distinctio necessitatibus commodi quia nobis molestiae, repudiandae iste ex earum et officia repellat sapiente. Obcaecati nobis cumque vel ad molestias sit.
+                            Rem at blanditiis dolores velit fugiat nesciunt, placeat molestias natus. Temporibus, maiores fuga aperiam fugit cupiditate, ipsum veniam ea labore libero obcaecati maxime reprehenderit, architecto harum molestias illo exercitationem voluptatum.
+                            Accusantium eaque libero officia, quibusdam sequi quisquam exercitationem. Ab quae itaque, modi voluptatibus eum consequatur tempora facere praesentium autem totam? Provident, saepe. Architecto saepe rem rerum accusantium ullam facere eveniet.
+                            Dicta sint eligendi, consequatur iure odit vero est animi ipsum perferendis similique corrupti magnam, quia quaerat. Eos architecto obcaecati ducimus, expedita nihil ea corrupti quaerat nobis tenetur quia labore sapiente.
+                            Saepe totam, culpa ducimus eos unde doloremque ipsa quae! Inventore repudiandae sit natus ea possimus optio quam maxime libero dicta iste ut assumenda, similique beatae unde amet vero consequuntur laboriosam.
+                            Distinctio corrupti eaque sequi vel voluptatum necessitatibus corporis! Repudiandae sunt voluptas cupiditate, quisquam asperiores iusto reiciendis distinctio corrupti harum nobis, iste ad accusamus doloremque, nisi aliquid rem tempora quia praesentium?
+                            Maiores illum deserunt corporis nisi totam perspiciatis vel fugiat nihil. Voluptates aspernatur nobis dolore dolorem. Sint inventore doloribus harum ullam non, nisi minus a amet quam voluptates laboriosam velit reiciendis.
+                            Pariatur nostrum sint, quasi libero voluptatibus cupiditate! Aut consequatur, impedit, quia laborum hic doloremque eos voluptatem ipsa exercitationem suscipit maiores voluptatum maxime accusantium, earum ab ex. Blanditiis laudantium non ab?
+                        </p>
+                        <a href="#"><button class="read_more_btn">Read More +</button></a>
+                    </article>
+    
+                    <article class="post-article">
+                        <h2 class="title">Title</h2>
+                        <div class="about_post">
+                            <div class="post_dt">
+                                <span>2021-01-01 12:12:12</span>
+                            </div>
+                            <div class="post_title_container">
+                                <div class="circle"></div>
+                                <span class="post_title">게시판 이름</span>
+                            </div>
+                        </div>
+                        <p class="post_ctnt">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi sunt dignissimos doloribus atque iusto qui et asperiores dolore commodi corporis! Maxime inventore veniam, itaque qui ipsam placeat et soluta omnis?
+                            Alias itaque ad minus aperiam minima suscipit dignissimos saepe doloribus, veritatis qui cupiditate incidunt quod aliquam fugiat laborum magni quisquam voluptates aut! Dicta maxime quidem rem quod laboriosam fuga magnam!
+                            Tempora minima aliquam officiis, tenetur iusto fuga, perspiciatis vitae distinctio necessitatibus commodi quia nobis molestiae, repudiandae iste ex earum et officia repellat sapiente. Obcaecati nobis cumque vel ad molestias sit.
+                            Rem at blanditiis dolores velit fugiat nesciunt, placeat molestias natus. Temporibus, maiores fuga aperiam fugit cupiditate, ipsum veniam ea labore libero obcaecati maxime reprehenderit, architecto harum molestias illo exercitationem voluptatum.
+                            Accusantium eaque libero officia, quibusdam sequi quisquam exercitationem. Ab quae itaque, modi voluptatibus eum consequatur tempora facere praesentium autem totam? Provident, saepe. Architecto saepe rem rerum accusantium ullam facere eveniet.
+                            Dicta sint eligendi, consequatur iure odit vero est animi ipsum perferendis similique corrupti magnam, quia quaerat. Eos architecto obcaecati ducimus, expedita nihil ea corrupti quaerat nobis tenetur quia labore sapiente.
+                            Saepe totam, culpa ducimus eos unde doloremque ipsa quae! Inventore repudiandae sit natus ea possimus optio quam maxime libero dicta iste ut assumenda, similique beatae unde amet vero consequuntur laboriosam.
+                            Distinctio corrupti eaque sequi vel voluptatum necessitatibus corporis! Repudiandae sunt voluptas cupiditate, quisquam asperiores iusto reiciendis distinctio corrupti harum nobis, iste ad accusamus doloremque, nisi aliquid rem tempora quia praesentium?
+                            Maiores illum deserunt corporis nisi totam perspiciatis vel fugiat nihil. Voluptates aspernatur nobis dolore dolorem. Sint inventore doloribus harum ullam non, nisi minus a amet quam voluptates laboriosam velit reiciendis.
+                            Pariatur nostrum sint, quasi libero voluptatibus cupiditate! Aut consequatur, impedit, quia laborum hic doloremque eos voluptatem ipsa exercitationem suscipit maiores voluptatum maxime accusantium, earum ab ex. Blanditiis laudantium non ab?
+                        </p>
+                        <a href="#"><button class="read_more_btn">Read More +</button></a>
+                    </article>
+    
+                    <article class="post-article">
+                        <h2 class="title">Title</h2>
+                        <div class="about_post">
+                            <div class="post_dt">
+                                <span>2021-01-01 12:12:12</span>
+                            </div>
+                            <div class="post_title_container">
+                                <div class="circle"></div>
+                                <span class="post_title">게시판 이름</span>
+                            </div>
+                        </div>
+                        <p class="post_ctnt">
+                            lorem*100Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi sunt dignissimos doloribus atque iusto qui et asperiores dolore commodi corporis! Maxime inventore veniam, itaque qui ipsam placeat et soluta omnis?
+                            Alias itaque ad minus aperiam minima suscipit dignissimos saepe doloribus, veritatis qui cupiditate incidunt quod aliquam fugiat laborum magni quisquam voluptates aut! Dicta maxime quidem rem quod laboriosam fuga magnam!
+                            Tempora minima aliquam officiis, tenetur iusto fuga, perspiciatis vitae distinctio necessitatibus commodi quia nobis molestiae, repudiandae iste ex earum et officia repellat sapiente. Obcaecati nobis cumque vel ad molestias sit.
+                            Rem at blanditiis dolores velit fugiat nesciunt, placeat molestias natus. Temporibus, maiores fuga aperiam fugit cupiditate, ipsum veniam ea labore libero obcaecati maxime reprehenderit, architecto harum molestias illo exercitationem voluptatum.
+                            Accusantium eaque libero officia, quibusdam sequi quisquam exercitationem. Ab quae itaque, modi voluptatibus eum consequatur tempora facere praesentium autem totam? Provident, saepe. Architecto saepe rem rerum accusantium ullam facere eveniet.
+                            Dicta sint eligendi, consequatur iure odit vero est animi ipsum perferendis similique corrupti magnam, quia quaerat. Eos architecto obcaecati ducimus, expedita nihil ea corrupti quaerat nobis tenetur quia labore sapiente.
+                            Saepe totam, culpa ducimus eos unde doloremque ipsa quae! Inventore repudiandae sit natus ea possimus optio quam maxime libero dicta iste ut assumenda, similique beatae unde amet vero consequuntur laboriosam.
+                            Distinctio corrupti eaque sequi vel voluptatum necessitatibus corporis! Repudiandae sunt voluptas cupiditate, quisquam asperiores iusto reiciendis distinctio corrupti harum nobis, iste ad accusamus doloremque, nisi aliquid rem tempora quia praesentium?
+                            Maiores illum deserunt corporis nisi totam perspiciatis vel fugiat nihil. Voluptates aspernatur nobis dolore dolorem. Sint inventore doloribus harum ullam non, nisi minus a amet quam voluptates laboriosam velit reiciendis.
+                            Pariatur nostrum sint, quasi libero voluptatibus cupiditate! Aut consequatur, impedit, quia laborum hic doloremque eos voluptatem ipsa exercitationem suscipit maiores voluptatum maxime accusantium, earum ab ex. Blanditiis laudantium non ab?
+                        </p>
+                        <a href="#"><button class="read_more_btn">Read More +</button></a>
+                    </article>
+                    <!-- forEach 끝날부분 -->
+                    <article class="last-article">
+                        <div class="last-article-container">
+                            <a href="write.html">
+                                <img src="./assets/add.png" alt="post write button">
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>

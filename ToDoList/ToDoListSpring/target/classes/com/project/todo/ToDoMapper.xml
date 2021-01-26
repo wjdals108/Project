@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.project.todo.ToDoMapper">
+ 	<insert id="insToDo" parameterType="ToDoEntity">
+ 		INSERT INTO t_todo (item) VALUES (#{item})
+ 	</insert>
+ 	
+ 	<select id="selToDoList" resultType="ToDoEntity">
+ 		SELECT i_todo, item FROM t_todo ORDER BY i_todo DESC
+ 	</select>
+ 
+ 	<select id="selToDoCount" resultType="int">
+ 		SELECT COUNT(i_todo) FROM t_todo
+ 	</select>
+ 	
+ 	<delete id="delToDo" parameterType="ToDoEntity">
+ 		DELETE FROM t_todo WHERE i_todo = #{i_todo}
+ 	</delete>
+ 	
+ 	<delete id="delToDoAll">
+ 		DELETE FROM t_todo
+ 	</delete>
+ </mapper>

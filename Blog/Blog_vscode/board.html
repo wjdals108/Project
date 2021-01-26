@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="./assets/blog.png" alt="Blog image">
+            </div>
+            <nav class="menu-bar-container">
+                <ul class="menu-bar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">게시판</a>
+                        <ul class="drop-board">
+                            <!-- jsp에서 forEach 쓸 부분 -->
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판11</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li id="last-drop-menu">
+                                <a href="#">게시판 추가 +</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="board-main">
+            <h2>게시판 이름(게시글 수)</h2>
+            <table id="board-list-table">
+                <thead>
+                    <tr>
+                        <th id="board-num">번호</th>
+                        <th id="board-title">제목</th>
+                        <th id="board-dt">날짜</th>
+                        <th id="board-count">조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- forEach 문 들어갈곳 -->
+                    <tr>
+                        <td class="center" >2</td>
+                        <td><a href="detail.html">title</a></td>
+                        <td>2021-12-34 01:23:38</td>
+                        <td class="center" >0</td>
+                    </tr>
+                    <tr>
+                        <td class="center" >1</td>
+                        <td><a href="detail.html">title</a></td>
+                        <td>2021-12-34 01:23:34</td>
+                        <td class="center" >1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="write-btn-div">
+                <button id="write-submit-btn" type="submit">글 쓰기</button>
+            </div>     
+        </main>
+
+    </div>
+</body>
+</html>
