@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Write</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <a href="index.html">
-                    <img src="./assets/blog.png" alt="Blog image">
-                </a>
+                <img src="./assets/blog.png" alt="Blog image">
             </div>
             <nav class="menu-bar-container">
                 <ul class="menu-bar">
@@ -38,17 +36,26 @@
                 </ul>
             </nav>
         </header>
+
         <main>
             <div class="login-container">
-                <form id="login-form" action="#" method="POST">
-                    <input type="text" name="userId" id="input-userId" placeholder="ID" required>
-                    <input type="password" name="userPw" id="input-userPw" placeholder="PASSWORD" required>
-                    <div class="login-btn-div">
-                        <button id="login-submit-btn" type="submit">글 쓰기</button>
+                <form action="#" method="#"">
+                    <div class="login-top">
+                        <label for="input_id">Username : </label>
+                        <input type="text" name="uid" id="input_id" placeholder="ID">
+                        <label for="input_pw">Password : </label>
+                        <input type="password" name="upw" id="input_pw" placeholder="PASSWORD">
+                    </div>
+                    <div class="login-bottom">
+                        <button type="submit" id="login-btn">Login</button>
                     </div>
                 </form>
+
             </div>
+
         </main>
+
+
     </div>
 </body>
 </html>

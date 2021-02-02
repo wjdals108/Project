@@ -382,7 +382,54 @@ a {
     height: 30px;
 }
 
+/* ---------------------- login.html css부분 */
 
+.login-container {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+}
+
+.login-top {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 30px 0;
+}
+
+.login-container form input, .login-container form label {
+    width: 80%;
+    height: 50px;
+    padding: 20px 10px;
+    font-size: 16px;
+}
+
+.login-bottom {
+    width: 100%;
+    padding: 30px 10% 30px 0;
+    border-top: 1px solid #000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#login-btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 
 
