@@ -14,13 +14,11 @@
     <div class="container">
         <header>
             <div class="logo">
-                <a href="index.html">
-                    <img src="./assets/blog.png" alt="Blog image">
-                </a>
+                <img src="./assets/blog.png" alt="Blog image">
             </div>
             <nav class="menu-bar-container">
                 <ul class="menu-bar">
-                    <li><a href="index.html">Home</a></li>
+                    <li id="nav-home"><a href="index.html">Home</a></li>
                     <li><a href="#">게시판</a>
                         <ul class="drop-board">
                             <!-- jsp에서 forEach 쓸 부분 -->
@@ -36,6 +34,9 @@
                         </ul>
                     </li>
                 </ul>
+                <span id="nav-span">##########님 로그인을 환영합니다.</span>
+                <div><a href="#"><button id="logout-btn">Logout</button></a></div>
+                <!-- <div><a href="#"><button id="login-btn">Login</button></a></div> -->
             </nav>
         </header>
         <main id="board-main">
