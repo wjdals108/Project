@@ -41,18 +41,25 @@
         </header>
 
         <main>
-            <div class="login-container">
-                <div class="login-form-container">
+            <div class="join-container">
+                <div class="join-form-container">
                     <form action="#" method="#"">
-                        <div class="login-top">
-                            <label for="input_id">ID : </label>
+                        <div class="join-top">
+                            <div class="join-input-id-container">
+                                <label for="input_id">ID : </label>
+                                <button id="chkId">중복확인</button>
+                            </div>
                             <input type="text" name="uid" id="input_id" placeholder="ID">
+                            <label for="input_id">NICKNAME : </label>
+                            <input type="text" name="uid" id="input_nickname" placeholder="NICKNAME">
                             <label for="input_pw">Password : </label>
                             <input type="password" name="upw" id="input_pw" placeholder="PASSWORD">
+                            <label for="input_pw">Password Check : </label>
+                            <input type="password" name="upw" id="input_pw" placeholder="PASSWORD CHECK">
                         </div>
-                        <div class="login-bottom">
-                            <a href="#">회원이 아니신가요?</a>
-                            <button type="submit" id="login-submit-btn">Login</button>
+                        <div class="join-bottom">
+                            <a href="#">이미 가입하셨나요?</a>
+                            <button type="submit" id="join-submit-btn">Join</button>
                         </div>
                     </form>
                 </div>

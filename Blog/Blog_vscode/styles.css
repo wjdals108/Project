@@ -130,8 +130,7 @@ a {
     justify-content: flex-start;
 }
 
-.post-article,
-.last-article {
+.post-article {
     /* display: inline-block; */
     margin: 15px;
     padding: 15px;
@@ -204,17 +203,15 @@ a {
     border-radius: 4px;
 }
 
-.last-article-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main-write-container {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
 }
 
-.last-article img {
-    width: auto;
-    height: 70%;
+.main-write-container img {
+    width: 70px;
+    height: 70px;
 }
 
 /* --------------------------- write.html css 부분 */
@@ -290,7 +287,6 @@ a {
 #board-list-table {
     margin: 20px auto;
     width: 80%;
-    min-width: 570px;
 }
 
 #board-list-table th {
@@ -303,7 +299,7 @@ a {
 }
 
 #board-list-table #board-title {
-    width: 60%;
+    width: 40%;
 }
 
 #board-list-table #board-dt {
@@ -311,7 +307,7 @@ a {
 }
 
 #board-list-table #board-count {
-    width: 10%;
+    width: 30%;
     text-align: center;
 }
 
@@ -329,10 +325,28 @@ a {
     color: #bcbcbc;
 }
 
+.board-page-container {
+    display: flex;
+    justify-content: center;
+}
+
+.board-page li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+.selected-page {
+    color: #fff;
+    background-color: #3d3d3d;
+}
+
 /* -------------- detail.html css 부분 */
 
 #detail-main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -366,6 +380,7 @@ a {
 .detail-btn {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 30px;
 }
 
 .detail-btn button {
@@ -413,10 +428,14 @@ a {
     align-items: center;
 }
 
+.login-form-container {
+    border: 1px solid #000;
+    border-radius: 16px;
+}
+
 .login-container form {
     display: flex;
     flex-direction: column;
-    border: 1px solid #000;
 }
 
 .login-top {
@@ -440,12 +459,96 @@ a {
     width: 100%;
     padding: 30px 10%;
     border-top: 1px solid #000;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #3d3d3d;
+}
+
+.login-bottom a {
+    color: #fff;
 }
 
 #login-submit-btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+/* -------------------- join.html css 부분 */
+
+.join-container {
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-form-container {
+    border: 1px solid #000;
+    border-radius: 16px;
+}
+
+.join-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.join-top {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 30px 0;
+}
+
+.join-input-id-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+#chkId {
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #3d3d3d;
+    color: #fff;
+}
+
+.join-container form input, .join-container form label {
+    width: 80%;
+    height: 50px;
+    padding: 20px 10px;
+    font-size: 16px;
+}
+
+.join-bottom {
+    width: 100%;
+    padding: 30px 10%;
+    border-top: 1px solid #000;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3d3d3d;
+}
+
+.join-bottom a {
+    color: #fff;
+}
+
+#join-submit-btn {
     width: 100px;
     height: 40px;
     border-radius: 16px;
@@ -460,11 +563,23 @@ a {
     #nav-home {
         display: none;
     }
+    .main-write-container img {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 @media (max-width:767px) {
     #nav-span {
         font-size: 0px;
+    }
+
+    #board-list-table #board-num {
+        width: 20%;
+    }
+
+    #board-list-table #board-count {
+        width: 40%;
     }
 }
 
@@ -474,11 +589,20 @@ a {
         width: 90%;
         max-width: 90%;
     }
+
+    #board-list-table #board-dt,
+    .board-dt {
+        display: none;
+    }
 }
 
 @media (min-width: 1024px) {
     #nav-span {
         font-size: 20px;
+    }
+
+    #board-list-table #board-title {
+        width: 60%;
     }
 }
 
