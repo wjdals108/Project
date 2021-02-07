@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="./assets/blog.png" alt="Blog image">
+            </div>
+            <nav class="menu-bar-container">
+                <ul class="menu-bar">
+                    <li id="nav-home"><a href="index.html">Home</a></li>
+                    <li><a href="#">게시판</a>
+                        <ul class="drop-board">
+                            <!-- jsp에서 forEach 쓸 부분 -->
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판11</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li><a href="#">게시판1</a></li>
+                            <li id="last-drop-menu">
+                                <a href="#">게시판 추가 +</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <span id="nav-span">##########님 로그인을 환영합니다.</span>
+                <div><a href="#"><button id="logout-btn">Logout</button></a></div>
+                <!-- <div><a href="#"><button id="login-btn">Login</button></a></div> -->
+            </nav>
+        </header>
+        <main>
+            <div class="boardmanage-container">
+                <h1>BOARD LIST</h1>
+                <div class="board-article-container">
+                    <!-- forEach 쓸꺼임 -->
+                    <article class="board-article">
+                        <form id="여기에다가게시판pk값넣자" action="###">
+                            <input class="boardNm" name="boardNm" type="text" value="게시판이름" disabled>
+                            <button class="boardNmUpdateBtn" name="boardNmUpdateBtn" type="submit">수정</button>
+                        </form>
+                        <div class="board-article-span-container">
+                            <span>게시글 수 : <strong>32</strong></span>
+                        </div>
+                        <div class="board-article-btn">
+                            <button class="nmUpdateBtn" onclick="nmUpdate(여기다가게시판pk값넣자)">게시판 이름 바꾸기</button>
+                            <button class="nmDelBtn">삭제</button>
+                        </div>
+                    </article>
+
+                    <article class="board-article">
+                        <form id="2" action="###">
+                            <input class="boardNm" name="boardNm" type="text" value="게시판이름2" disabled>
+                            <button class="boardNmUpdateBtn" name="boardNmUpdateBtn" type="submit">수정</button>
+                        </form>
+                        <div class="board-article-span-container">
+                            <span>게시글 수 : <strong>32</strong></span>
+                        </div>
+                        <div class="board-article-btn">
+                            <button class="nmUpdateBtn" onclick="nmUpdate(2)">게시판 이름 바꾸기</button>
+                            <button class="nmDelBtn">삭제</button>
+                        </div>
+                    </article>
+
+                    <article class="board-article">
+                        <form id="3" action="###">
+                            <input class="boardNm" name="boardNm" type="text" value="게시판이름" disabled>
+                            <button class="boardNmUpdateBtn" name="boardNmUpdateBtn" type="submit">수정</button>
+                        </form>
+                        <div class="board-article-span-container">
+                            <span>게시글 수 : <strong>32</strong></span>
+                        </div>
+                        <div class="board-article-btn">
+                            <button class="nmUpdateBtn" onclick="nmUpdate(3)">게시판 이름 바꾸기</button>
+                            <button class="nmDelBtn">삭제</button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>

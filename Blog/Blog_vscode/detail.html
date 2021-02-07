@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
+    <script defer src="./app.js"></script>
 </head>
 <body>
     <div class="container">
@@ -29,7 +30,7 @@
                             <li><a href="#">게시판1</a></li>
                             <li><a href="#">게시판1</a></li>
                             <li id="last-drop-menu">
-                                <a href="#">게시판 추가 +</a>
+                                <a href="#">게시판 관리</a>
                             </li>
                         </ul>
                     </li>
@@ -45,6 +46,7 @@
                     <span>No.숫자</span>
                     <span>2021-11-11 11:11:11</span>
                 </div>
+                <span id="detail-hits">조회수 : 3</span>
                 <h2>Title</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis temporibus explicabo alias labore aliquid iste reiciendis ut debitis consectetur earum, aspernatur nam. Nesciunt sunt atque deserunt laudantium praesentium quod vitae?
@@ -60,13 +62,52 @@
                 </p>
                 <div class="detail-btn">
                     <a href="update.html"><button type="button">수정</button></a>
+                    <a href="###"><button type="button">삭제</button></a>
                 </div>
                 <a href="board.html">### 게시판의 게시글 더보기 ></a>
             </div>
             <div class="cmt-container">
+                <h3>댓글</h3>
+                <article class="cmt-article">
+                    <span><strong>닉네임</strong></span>
+                    <p>여기에 댓글 내용이 오겠지
+                        dk
+                        아
+                        아아
+                        아
+                    </p>
+                    <div class="cmt-article-bottom">
+                        <span class="cmt-dt">2021-02-11 12:12:12</span>
+                        <a href="###"><button id="cmt-del-btn">삭제</button></a>
+                    </div>
+                </article>
+                
+                <article class="cmt-article">
+                    <span><strong>닉네임</strong></span>
+                    <p>여기에 댓글 내용이 오겠지
+                        dk
+                        아
+                        아아
+                        아
+                    </p>
+                    <div class="cmt-article-bottom">
+                        <span class="cmt-dt">2021-02-11 12:12:12</span>
+                        <a href="###"><button id="cmt-del-btn">삭제</button></a>
+                    </div>
+                </article>
+                <div class="cmt-page-container">
+                    <ul class="cmt-page">
+                        <a href="###"><li><</li></a>
+                        <a href="##"><li class="selected-page">1</li></a>
+                        <a href="##"><li>2</li></a>
+                        <a href="##"><li>3</li></a>
+                        <a href="###"><li>></li></a>
+                    </ul>
+                </div>
                 <div class="cmt-input">
-                    <input type="text" name="cmt-ctnt" id="input_cmt" placeholder="댓글을 입력하세요">
-                    <button>등록</button>
+                    <strong>정민</strong>
+                    <textarea onkeydown="resize(this)" onkeyup="resize(this)" name="cmt-ctnt" id="input_cmt" placeholder="댓글을 남겨보세요"></textarea>
+                    <button id="input_cmt_btn">등록</button>
                 </div>
             </div>
         </main>
