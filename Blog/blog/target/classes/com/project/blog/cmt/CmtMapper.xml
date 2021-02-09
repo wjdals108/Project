@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.project.blog.cmt.CmtMapper">
+		<select id="selCmtList" resultType="CmtEntity">
+			SELECT * FROM t_cmt
+			WHERE boardPk = #{boardPk}
+			ORDER BY cmtPk DESC
+		</select>
+
+		<insert id="insCmt">
+			INSERT INTO t_cmt
+			(boardPk, nickname, ctnt)
+			VALUE
+			(#{boardPk}, #{nickname}, #{ctnt})
+		</insert>
+
+ </mapper>

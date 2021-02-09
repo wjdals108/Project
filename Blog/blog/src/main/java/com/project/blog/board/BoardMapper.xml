@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.project.blog.board.BoardMapper">
+ 	<insert id="insBoard">
+ 		INSERT INTO t_board
+		(category, seq, title, ctnt)
+		SELECT #{category}, IFNULL(MAX(seq), 0) + 1, #{title}, #{ctnt}
+		FROM t_board
+		WHERE category = #{category}
+ 	</insert>
+ 	
+ 	<select id="selBoardList" resultType="BoardEntity">
+ 		SELECT boardPk, category, seq, title, hits, regDt
+ 		FROM t_board
+ 		WHERE category = #{category}
+ 		AND isDel = 0
+ 		ORDER BY seq DESC
+		LIMIT #{sIdx}, #{rowCnt}
+ 	</select>
+ 	
+ 	<select id="selPageLength" resultType="int">
+ 		SELECT CEIL(COUNT(seq) / #{rowCnt})
+ 		FROM t_board
+ 		WHERE category = #{category}
+ 	</select>
+ 	
+ 	<select id="selMenuList" resultType="BoardManageEntity">
+		SELECT * FROM t_board_manage
+		ORDER BY orderby
+	</select>
+	
+	<select id="selMenu" resultType="BoardManageEntity">
+		SELECT * FROM t_board_manage
+		WHERE category = #{category}
+	</select>
+	
+	<select id="selBoardCount" resultType="int">
+		SELECT COUNT(seq) FROM t_board
+		WHERE category = #{category}
+	</select>
+	
+	<select id="selPostList" resultType="BoardDomain">
+		SELECT A.boardPk, A.category, A.title, A.ctnt, A.hits, A.regDt, B.nm
+ 		FROM t_board A
+ 		INNER JOIN t_board_manage B
+ 		ON A.category = B.category
+ 		AND isDel = 0
+ 		ORDER BY boardPk DESC
+		LIMIT #{sIdx}, #{rowCnt}
+	</select>
+	
+	<select id="selBoard" resultType="BoardDomain">
+		SELECT A.boardPk, A.category, A.seq, A.title, A.ctnt, A.hits, A.regDt, B.nm
+ 		FROM t_board A
+ 		INNER JOIN t_board_manage B
+		ON A.category = B.category
+		WHERE A.boardPk = #{boardPk}
+	</select>
+	
+	<update id="updHits">
+		UPDATE t_board
+		SET hits = hits+1
+		WHERE boardPk = #{boardPk}
+	</update>
+ 	
+ </mapper>

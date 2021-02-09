@@ -1,0 +1,805 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+button {
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+    margin-left: 5%;
+}
+
+.menu-bar-container {
+    width: 100%;
+    height: 50px;
+    background-color: #3d3d3d;
+    display: flex;
+    align-items: center;
+    
+}
+
+.menu-bar >  li {
+    float: left;
+    border-right: 2px solid #bcbcbc;
+    height: 50px;
+}
+
+.menu-bar > li > a {
+    width: 100%;
+    font-size: 15px;
+    height: 100%;
+    display: block;
+    padding: 12px 32px;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+    transform: translateY(10%);
+}
+
+.menu-bar > li:hover .drop-board {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s;
+}
+
+.drop-board {
+    position: absolute;
+    background-color: #383838;
+    border-bottom: 4px solid #588535;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.drop-board > li {
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    height: 40px;
+}
+
+.drop-board > li > a {
+    width: 100%;
+    padding: 12px 28px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    display: block;
+}
+
+#last-drop-menu {
+    height: 20px;
+}
+
+#last-drop-menu > a {
+    display: inline;
+    font-size: 12px;
+}
+
+#nav-span {
+    color: rgba(255,255,255,0.8);
+    text-align: end;
+    flex-grow: 1;
+    font-size: 2vw;
+    padding-right: 20px;
+}
+
+#logout-btn,
+#login-btn {
+    border-left: 2px solid #bcbcbc;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* main css */
+
+.main-container {
+    padding: 0 5%;
+}
+
+.main-container > h1{
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 0 10%;
+    margin-bottom: 30px;
+    font-weight: 100;
+}
+
+.post-article-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.post-article {
+    /* display: inline-block; */
+    margin: 15px;
+    padding: 15px;
+    width: 45%;
+    height: 220px;
+    min-width: 270px;
+    border: 1px solid #ebeeef;
+}
+
+.title {
+    margin: 0 0 12px;
+    font-weight: bold;
+    width: 100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.about_post {
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.post_dt {
+    font-size: 11px;
+    text-align: right;
+    margin-bottom: 8px;
+}
+
+.post_title_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.circle {
+    display: inline-block;
+    width:10px;
+    height:10px;
+    background-color: #bcbcbc;
+    border-radius: 50%;
+}
+
+.post_title {
+    font-size: 11px;
+}
+
+.post_ctnt {
+    margin: 0;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+    margin-bottom: 10px;
+    white-space: pre-line;
+}
+
+.post-article > a {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.read_more_btn {
+    background-color: transparent;
+    border: 1.5px solid #000;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.main-write-container {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
+
+.main-write-container img {
+    width: 70px;
+    height: 70px;
+}
+
+/* --------------------------- write.html css 부분 */
+
+.write-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choose-board {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.choose-board > span {
+    margin-right: 20px;
+}
+
+#write-form {
+    width: 80%;
+    max-width: 800px;
+    height: 600px;
+    margin: 50px 10%;
+    padding: 5%;
+    border: 3px solid #ebeeef;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#input-title {
+    height: 50px;
+    width: 90%;
+    border-radius: 4px;
+    font-size: 25px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+#input_ctnt {
+    height: 70%;
+    width: 90%;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.write-btn-div {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#write-submit-btn {
+    width: 80px;
+    height: 30px;
+}
+
+/* -------------------------------- board.html css 부분 */
+
+#board-main {
+    padding: 0 10%;
+}
+
+#board-main h2 {
+    margin-bottom: 40px;
+}
+
+#board-list-table {
+    margin: 20px auto;
+    width: 80%;
+}
+
+#board-list-table th {
+    text-align: left;
+}
+
+#board-list-table #board-num {
+    width: 10%;
+    text-align: center;
+}
+
+#board-list-table #board-title {
+    width: 40%;
+}
+
+#board-list-table #board-dt {
+    width: 20%;
+}
+
+#board-list-table #board-count {
+    width: 30%;
+    text-align: center;
+}
+
+#board-list-table th, td {
+    border-bottom: 2px solid #ebeeef;
+    height: 30px;
+}
+
+.center {
+    text-align: center;
+}
+
+#board-list-table tbody td,
+#board-list-table tbody td a {
+    color: #bcbcbc;
+}
+
+.board-page-container {
+    display: flex;
+    justify-content: center;
+}
+
+.board-page li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.board-page li a {
+	width: 100%;
+	height: 100%;
+}
+
+.selected-page {
+    background-color: #3d3d3d;
+}
+
+.selected-page a {
+	color: #fff;
+}
+
+/* -------------- detail.html css 부분 */
+
+#detail-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-container {
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+    margin: 50px 10% 10px;
+    padding: 30px 5%;
+    border: 3px solid #ebeeef;
+    border-radius: 8px;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#detail-hits {
+    float: right;
+}
+
+.detail-container h2 {
+    font-size: 40px;
+}
+
+.detail-container p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    white-space: pre-line;
+}
+
+.detail-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.detail-btn button {
+    margin: 0 5px;
+}
+
+.cmt-container {
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 10%;
+    margin-bottom: 50px;
+    padding: 30px 5%;
+    border: 2px solid #ebeeef;
+    border-radius: 8px;
+}
+
+.cmt-input {
+    display: flex;
+    border: 3px solid #ebeeef;
+    border-radius: 8px;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.cmt-input strong {
+    margin-bottom: 10px;
+}
+
+#input_cmt {
+    width: 100%;
+    border: 0;
+    min-height: 30px;
+    overflow: hidden;
+    resize: none;
+}
+
+#input_cmt:focus {
+    outline: none;
+}
+
+#input_cmt_btn {
+    width: 50px;
+    position: relative;
+    left: 95%;
+    font-weight: bold;
+    border: 0;
+    background-color: #fff;
+}
+
+.cmt-article {
+    border-bottom: 1px solid #ebeeef;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cmt-article p {
+    margin: 10px 0;
+    font-size: 14px;
+    white-space: pre-line;
+}
+
+.cmt-article-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cmt-dt {
+    font-size: 11px;
+    color: #bcbcbc;
+}
+
+#cmt-del-btn {
+    background-color: #fff;
+    border: 0;
+    font-weight: bold;
+}
+
+.cmt-page-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.cmt-page li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+/* ----------------------update.html css 부분 */
+
+.update-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#update-form {
+    width: 80%;
+    max-width: 800px;
+    height: 600px;
+    margin: 50px 10%;
+    padding: 5%;
+    border: 3px solid #ebeeef;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-btn-div {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#update-submit-btn {
+    width: 80px;
+    height: 30px;
+}
+
+/* ---------------------- login.html css부분 */
+
+.login-container {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-container {
+    border: 1px solid #000;
+    border-radius: 16px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-top {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 30px 0;
+}
+
+.login-container form input, .login-container form label {
+    width: 80%;
+    height: 50px;
+    padding: 20px 10px;
+    font-size: 16px;
+}
+
+.login-bottom {
+    width: 100%;
+    padding: 30px 10%;
+    border-top: 1px solid #000;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3d3d3d;
+}
+
+.login-bottom a {
+    color: #fff;
+}
+
+#login-submit-btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+/* -------------------- join.html css 부분 */
+
+.join-container {
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-form-container {
+    border: 1px solid #000;
+    border-radius: 16px;
+}
+
+.join-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.join-top {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 30px 0;
+}
+
+.join-input-id-container,
+.join-input-nickname-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+#chkId,
+#chkNickname {
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #3d3d3d;
+    color: #fff;
+}
+
+.join-container form input, .join-container form label {
+    width: 80%;
+    height: 50px;
+    padding: 20px 10px;
+    font-size: 16px;
+}
+
+.join-bottom {
+    width: 100%;
+    padding: 30px 10%;
+    border-top: 1px solid #000;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3d3d3d;
+}
+
+.join-bottom a {
+    color: #fff;
+}
+
+#join-submit-btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* ----------------------boardmange.html css 부분 */
+
+.boardmanage-container {
+    padding: 0 5%;
+}
+
+.boardmanage-container > h1{
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 0 10%;
+    margin-bottom: 30px;
+    font-weight: 100;
+}
+
+.board-article-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.board-article {
+    margin: 15px;
+    padding: 15px;
+    width: 45%;
+    min-width: 270px;
+    border: 1px solid #bcbcbc;
+    display: flex;
+    flex-direction: column;
+}
+
+.board-article form {
+    display: flex;
+}
+
+.boardNm {
+    font-size: 30px;
+    width: 89%;
+    background-color: #fff;
+    border: 0;
+}
+
+.board-article-span-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+
+.boardNmUpdateBtn {
+    border: 0;
+    font-weight: bold;
+    display: none;
+}
+
+.board-article-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.nmUpdateBtn {
+    padding: 0;
+    border: 0;
+    width: 130px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.nmDelBtn {
+    padding: 0;
+    border: 0;
+    width: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+
+
+@media (max-width:450px) {
+    #nav-home {
+        display: none;
+    }
+    .main-write-container img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width:767px) {
+    #nav-span {
+        font-size: 0px;
+    }
+
+    #board-list-table #board-num {
+        width: 20%;
+    }
+
+    #board-list-table #board-count {
+        width: 40%;
+    }
+}
+
+@media (max-width:1023px) {
+    .post-article,
+    .last-article,
+    .board-article {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    #board-list-table #board-dt,
+    .board-dt {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    #nav-span {
+        font-size: 20px;
+    }
+
+    #board-list-table #board-title {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1439px) {
+    .post-article,
+    .last-article,
+    .board-article {
+        width: 390px;
+    }
+}
