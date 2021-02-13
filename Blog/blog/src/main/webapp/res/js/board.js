@@ -3,6 +3,16 @@ function resize(obj) {
     obj.style.height = (12+obj.scrollHeight)+"px";
 }
 
+function nmUpdate(boardNum) {
+  var frmElem = document.getElementById(boardNum)
+  var boardNmElem = frmElem.boardNm
+  var boardNmUpdateBtnElem = frmElem.boardNmUpdateBtn
+  
+  boardNmElem.removeAttribute('disabled')
+  boardNmElem.focus();
+  boardNmUpdateBtnElem.style.display = 'inline-block'
+}
+
 //글쓰기
 var writeBtnElem = document.querySelector('#write-submit-btn')
 
@@ -95,9 +105,10 @@ if(chkNicknameElem){
 var cmtElem = document.querySelector('.cmt-article-container')
 if(cmtElem) {
 	
-	ajax()
+	selCmtList()
 	
-	function ajax () {
+	function selCmtList() {
+		cmtElem.innerHTML = ''
 		
 		var getBoardPkElem = document.querySelector('#getBoardPk')
 		
@@ -115,24 +126,48 @@ if(cmtElem) {
 	function makeCmt(item) {
 		var article = document.createElement('article')
 		article.className = 'cmt-article'
+		
 		article.innerHTML = 
-		`<span><strong>${item.nickname}</strong></span>
+		`
+		<span><strong>${item.nickname}</strong></span>
 		<p>${item.ctnt}</p>
 		<div class="cmt-article-bottom">
 			<span class="cmt-dt">${item.regDt}</span>
-			<a href="###"><button id="cmt-del-btn">삭제</button></a>
-		</div>`
+			<button id="cmt-del-btn" type="button" onclick="delCmt(${item.cmtPk}, '${item.nickname}')">삭제</button>
+		</div>
+		`
 		cmtElem.append(article)
 	}
 }
 
+//댓글삭제
+function delCmt(cmtPk, cmtNickname) {
+	if(cmtNickname !== loginNicknameElem.value) {
+		alert('삭제권한이 없습니다.')
+		return
+	}
+	
+	if(confirm('정말 삭제하시겠습니까?')){
+		fetch(`/cmt?cmtPk=${cmtPk}`, {
+			method: 'delete'
+		}).then(res => res.json())
+		.then(myJson => {
+			if(myJson === 1) {
+				selCmtList()
+			} else {
+				alert('삭제를 실패하였습니다.')
+			}
+		})
+	}
+}
+
 var inputCmtBtnElem = document.querySelector('#input_cmt_btn')
+var loginNicknameElem = document.querySelector('#login-cmt-nickname')
 if(inputCmtBtnElem) {
 	var getBoardPkElem = document.querySelector('#getBoardPk')
-	var cmtNicknameElem = document.querySelector('#cmt-nickname')
 	var cmtCtntElem = document.querySelector('#input_cmt')
 	
-	function ajax(){
+	function writeCmt(){
 		
 		if(cmtCtntElem.value === '') {
 			alert('댓글을 입력해 주세요')
@@ -142,7 +177,7 @@ if(inputCmtBtnElem) {
 		
 		var param = {
 			boardPk: getBoardPkElem.value,
-			nickname: cmtNicknameElem.value,
+			nickname: loginNicknameElem.value,
 			ctnt: cmtCtntElem.value
 		}
 		
@@ -156,7 +191,8 @@ if(inputCmtBtnElem) {
 			return res.json()
 		}).then(function(myJson) {
 			if(myJson==1) {
-				location.reload()
+				cmtCtntElem.value = ''
+				selCmtList()
 			} else {
 				alert('댓글등록 실패')
 			}
@@ -164,5 +200,5 @@ if(inputCmtBtnElem) {
 	
 	
 	}
-	inputCmtBtnElem.addEventListener('click', ajax)
+	inputCmtBtnElem.addEventListener('click', writeCmt)
 }

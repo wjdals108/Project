@@ -26,7 +26,7 @@
  		WHERE category = #{category}
  	</select>
  	
- 	<select id="selMenuList" resultType="BoardManageEntity">
+ 	<select id="selMenuList" resultType="BoardManageDomain">
 		SELECT * FROM t_board_manage
 		ORDER BY orderby
 	</select>

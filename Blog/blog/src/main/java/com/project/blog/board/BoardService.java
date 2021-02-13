@@ -11,6 +11,7 @@ import com.project.blog.SecurityUtils;
 import com.project.blog.model.BoardDTO;
 import com.project.blog.model.BoardDomain;
 import com.project.blog.model.BoardEntity;
+import com.project.blog.model.BoardManageDomain;
 import com.project.blog.model.BoardManageEntity;
 
 @Service
@@ -43,8 +44,16 @@ public class BoardService {
 		return mapper.selPageLength(p);
 	}
 	
-	public List<BoardManageEntity> selMenuList() {
-		return mapper.selMenuList();
+	public List<BoardManageDomain> selMenuList() {
+		BoardDTO p = new BoardDTO();
+		List<BoardManageDomain> list = mapper.selMenuList();
+		
+		for (BoardManageDomain vo : list) {
+			p.setCategory(vo.getCategory());
+			vo.setSeqCount(mapper.selBoardCount(p));
+		}
+		
+		return list;
 	}
 	
 	public BoardManageEntity selMenu(BoardDTO p) {

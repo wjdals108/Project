@@ -20,4 +20,8 @@ public class CmtService {
 	public int insCmt(CmtEntity p) {
 		return mapper.insCmt(p);
 	}
+	
+	public int delCmt(CmtEntity p) {
+		return mapper.delCmt(p);
+	}
 }

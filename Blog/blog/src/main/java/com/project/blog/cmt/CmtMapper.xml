@@ -15,5 +15,10 @@
 			VALUE
 			(#{boardPk}, #{nickname}, #{ctnt})
 		</insert>
-
+	
+		<delete id="delCmt">
+			DELETE FROM t_cmt
+			WHERE cmtPk = #{cmtPk}
+			AND nickname = #{nickname}
+		</delete>
  </mapper>

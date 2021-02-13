@@ -20,13 +20,13 @@
     </div>
 	
 	<div class="cmt-container">
+		<input id="getBoardPk" type="hidden" value="${param.boardPk}">
+		<input type="hidden" value="${sessionScope.loginUser.nickname}" id="login-cmt-nickname">
 		<div class="cmt-article-container">
-			<input id="getBoardPk" type="hidden" value="${param.boardPk}">
 			<h3>댓글</h3>
 		</div>
 		<c:if test="${sessionScope.loginUser != null}">
 		<div class="cmt-input">
-			<input type="hidden" value="${sessionScope.loginUser.nickname}" id="cmt-nickname">
             <strong>${sessionScope.loginUser.nickname}</strong>
             <textarea onkeydown="resize(this)" onkeyup="resize(this)" name="ctnt" id="input_cmt" placeholder="댓글을 남겨보세요"></textarea>
             <button type="button" id="input_cmt_btn">등록</button>

@@ -15,6 +15,12 @@ public class SecurityUtils {
 		return (loginUser == null) ? 0 : loginUser.getUserPk();
 	}
 	
+	public String getLoginUserNickname(HttpSession hs) {
+		UserEntity loginUser = getLoginUser(hs);
+		
+		return (loginUser == null) ? null : loginUser.getNickname();
+	}
+	
 	public UserEntity getLoginUser(HttpSession hs) {
 		return (UserEntity)hs.getAttribute(Const.KEY_LOGINUSER);
 	}

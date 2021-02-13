@@ -10,4 +10,5 @@ import com.project.blog.model.CmtEntity;
 public interface CmtMapper {
 	List<CmtEntity> selCmtList(CmtEntity p);
 	int insCmt(CmtEntity p);
+	int delCmt(CmtEntity p);
 }

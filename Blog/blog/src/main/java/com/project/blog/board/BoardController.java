@@ -59,4 +59,9 @@ public class BoardController {
 	public void detail(Model model, BoardEntity p, HttpSession hs) {
 		model.addAttribute(Const.KEY_DATA, service.selBoard(p, hs));
 	}
+	
+	@GetMapping("/boardmanage")
+	public void boardmanage(Model model) {
+		model.addAttribute(Const.KEY_MENULIST, service.selMenuList());
+	}
 }

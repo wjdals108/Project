@@ -17,7 +17,7 @@
                             </c:forEach>
                             <c:if test="${sessionScope.loginUser.userPk == 1}">
                             <li id="last-drop-menu">
-                                <a href="#">게시판 관리</a>
+                                <a href="/board/boardmanage">게시판 관리</a>
                             </li>
                             </c:if>
                         </ul>
