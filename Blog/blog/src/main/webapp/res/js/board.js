@@ -23,7 +23,6 @@ if(writeBtnElem){
 		var ctntElem = frmElem.ctnt
 		
 	function ajax() {
-		
 		if(selectBoardElem.value == 0) {
 			alert('게시판을 선택해 주세요')
 			selectBoardElem.focus()
@@ -69,35 +68,6 @@ if(writeBtnElem){
 	}
 		
 	writeBtnElem.addEventListener('click', ajax)
-}
-
-
-var chkNicknameElem = document.querySelector('#chkNickname');
-if(chkNicknameElem){
-	function ajax () {
-		var frmElem = document.querySelector('#frm')
-		var nicknameElem = frmElem.nickname
-		var nicknameValue = nicknameElem.value
-		
-		if(nicknameValue===''){
-			alert('닉네임을 입력하세요')
-			nicknameElem.focus()
-			return
-		}
-		
-		fetch(`/user/chkNickname/${nicknameValue}`)
-			.then(function(res) {
-				return res.json()
-			})
-			.then(function(myJson) {
-				if(myJson.result==1){
-					alert('중복된 닉네임이 있습니다.')
-				} else {
-					alert('사용할 수 있는 닉네임 입니다.')
-				}
-			})
-		}
-	chkNicknameElem.addEventListener('click', ajax)
 }
 
 
